@@ -10,7 +10,7 @@ OUTPUT="${PREFIX}-${VERSION}_api"
 
 mkdir $SOURCE $OUTPUT
 
-## src.zip here is a zipped file downloaded from https://gluonhq.com/products/javafx/, javafx
+## src.zip here is a zipped file downloaded from https://gluonhq.com/products/javafx/, inside javafx sdk
 unzip src.zip -d $SOURCE
 
 MODULES=`ls $PREFIX-$VERSION`
@@ -26,3 +26,5 @@ STR="javadoc -d $OUTPUT --module-source-path $SOURCE $MODULE_OPTIONS -tag module
 ## e.g. javadoc -d jfx-21.0.9_API --module-source-path jfx-21.0.9 --module javafx.base --module javafx.controls --module javafx.fxml --module javafx.graphics --module javafx.media --module javafx.swing --module javafx.web -tag moduleGraph,implSpec
 # skipped the custom tags for not generating the errors
 javadoc -d $OUTPUT --module-source-path $SOURCE $MODULE_OPTIONS -tag moduleGraph,implSpec
+
+# echo $STR
