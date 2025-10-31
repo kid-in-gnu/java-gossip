@@ -1,0 +1,11 @@
+Last edited: 2025/10/31, vscode-1.105.1
+* [BRAIN-DEAD]
+  When you use vscode with Java/Gradle plugins, you MUST create YET ANOTHER WORKSPACE DIRECTORY, use it as `pwd`,
+  just to prevent plugins that use gradle to launch EVERY project inside that directory, in the background,
+  because of each one of them might has different JDK requirements(they are not yours, you don't care), it creates tons of notifications need you to deal with.
+  Not even mentioned that is time-consuming.
+  
+  DO NOT TRUST THE ANSWERS FROM COMMUNITY: these are solutions that doesn't work
+    "java.gradle.buildServer.enabled": "off",
+    "java.import.gradle.enabled": false,
+    "java.import.generatesMetadataFilesAtProjectRoot": true
